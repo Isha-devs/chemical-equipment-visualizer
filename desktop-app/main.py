@@ -257,7 +257,6 @@ class MainWindow(QMainWindow):
 
         wedges, _, _ = ax.pie(
             distribution.values,
-            # labels=distribution.index,
             autopct="%1.1f%%",
             startangle=90,
             colors = self.chart_colors,
@@ -367,13 +366,13 @@ class MainWindow(QMainWindow):
         }
 
         self.history.insert(0, entry)
-        self.history = self.history[:5]  # keep only last 5
+        self.history = self.history[:5]  
 
         self.update_history_ui()
 
 
     def update_history_ui(self):
-        # clear old buttons
+        
         while self.history_layout.count():
             child = self.history_layout.takeAt(0)
             if child.widget():
