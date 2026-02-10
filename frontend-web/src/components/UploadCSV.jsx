@@ -1,9 +1,8 @@
 import { useState } from "react";
 import api from "../api/axios";
 
-function UploadCSV() {
+function UploadCSV({summary,setSummary}) {
   const [file, setFile] = useState(null);
-  const [summary, setSummary] = useState(null);
 
   const handleUpload = async () => {
     if (!file) return alert("Select a file");

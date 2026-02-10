@@ -11,7 +11,7 @@ const Dashboard = () => {
     <div style={{ padding: "20px" }}>
       <h1>Chemical Equipment Parameter Visualizer</h1>
 
-      <UploadCSV onUploadSuccess={setSummary} />
+      <UploadCSV summary={summary} setSummary={setSummary} onUploadSuccess={setSummary} />
 
       {summary && (
         <>
