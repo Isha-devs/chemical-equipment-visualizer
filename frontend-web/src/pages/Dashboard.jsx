@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UploadCSV from "../components/UploadCSV";
 import History from "../components/History";
-import EquipmentChart from "../components/EquipmentChart";
+import EquipmentPieChart from "../components/EquipmentPieChart";
 import EquipmentBarChart from "../components/EquipmentBarChart";
 
 const Dashboard = () => {
@@ -22,22 +22,23 @@ const Dashboard = () => {
           <p>Average Pressure: {summary.average_pressure}</p>
           <p>Average Temperature: {summary.average_temperature}</p>
 
+
+
           {/* PIE CHART */}
           <h3>Equipment Type Distribution (Pie)</h3>
-          <div style = {{ border: "2px solid red", height: "420px", width: "420px" }}>
-              <EquipmentChart
-            data={summary.equipment_type_distribution}
+
+          <EquipmentPieChart
+            distribution={summary.equipment_type_distribution}
           />
-          </div>
-          
+
 
           {/* BAR CHART */}
           <h3>Equipment Type Distribution (Bar)</h3>
-          <div style= {{ border: "2px solid red", height: "420px", width: "420px" }}>
-              <EquipmentBarChart
+
+          <EquipmentBarChart
             distribution={summary.equipment_type_distribution}
           />
-          </div>
+          
           
         </>
       )}
